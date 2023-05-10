@@ -3,12 +3,11 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
-import { getAllProducts, getProductById } from '../data'
+import { getAllProducts, getProductById } from '../../data'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({title}) {
-  console.log(title);
   return (
     <>
       <Head>
@@ -37,7 +36,7 @@ export async function getStaticProps({params}) {
 export async function getStaticPaths() {
   const res = await getAllProducts();
 
-  const paths = res.products.map((p) => ({
+  const paths = res.map((p) => ({
     params: { id: p.id.toString() },
   }));
  

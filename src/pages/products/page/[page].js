@@ -1,14 +1,14 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import Link from 'next/link'
-import { getProductsPaginated } from '@/pages/data'
+import styles from './page.module.css'
+import { getProductsPaginated } from '@/data'
+import ProductCard from '@/components/ProductCard'
+import Paginator from '@/components/Paginator'
 
 const inter = Inter({ subsets: ['latin'] })
 const ipp = 10
 
-export default function Home({products, totalPages}) {
+export default function Home({products, totalPages, page}) {
   return (
     <>
       <Head>
@@ -18,8 +18,11 @@ export default function Home({products, totalPages}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        {products.map(product => <Link href={`/products/${product.id}`} key={product.id}>{product.title}</Link>)}
-        <Link href="/products/page/2">Next</Link>
+        <h1 className={styles.title}>Fantasticfy</h1>
+        <div className={styles.container}>
+          {products.map(product => <ProductCard product={product} key={product.id}/>)}
+        </div>
+        <Paginator currentPage={page} totalPages={totalPages}/>
       </main>
     </>
   )

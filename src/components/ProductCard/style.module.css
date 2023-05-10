@@ -1,0 +1,30 @@
+.productCard {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  width: calc( calc(100% - 80px) / 5);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.infoContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
