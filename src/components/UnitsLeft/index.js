@@ -7,11 +7,11 @@ export default function UnitsLeft ({ variant }) {
   }
 
   if (variant.inventory_quantity === 0) {
-    return <p>Sold Out!</p>
+    return <p className={styles.soldOut}>Sold Out!</p>
   }
 
   if (variant.inventory_quantity < 10) {
-    return <p>Only {variant.inventory_quantity} units left!</p>
+    return <p className={styles.lastUnits}>Only {variant.inventory_quantity} units left!</p>
   }
   return (
     <p>Units Left: {variant.inventory_quantity}</p>

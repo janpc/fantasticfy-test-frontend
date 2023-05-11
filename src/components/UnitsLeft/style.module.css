@@ -1,0 +1,8 @@
+.soldOut {
+  color: rgb(197, 33, 33);
+}
+
+.lastUnits {
+  color: rgb(197, 33, 33);
+  font-weight: bold;
+}

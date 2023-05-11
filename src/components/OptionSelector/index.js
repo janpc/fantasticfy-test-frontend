@@ -6,13 +6,19 @@ export default function OptionSelector ({ options, selectOption, selected }) {
     return ;
   }
   return (
-    <div>
-      <h3>{options.name}:</h3>
-      {options.values.map(opt =>
-        <button key={opt} onClick={() => selectOption(opt)}>
-          {opt}
-        </button>
+    <div className={styles.options}>
+      <h3 className={styles.options__title} >{options.name}:</h3>
+      <div className={styles.options__buttons}>
+        {options.values.map(opt =>
+          <button
+            key={opt}
+            onClick={() => selectOption(opt)}
+            className={`${styles.options__button} ${opt === selected && styles.active}`}
+          >
+            {opt}
+          </button>
         )}
+      </div>
     </div>
   );
 };

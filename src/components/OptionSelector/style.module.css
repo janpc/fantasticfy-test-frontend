@@ -1,0 +1,27 @@
+.options__title {
+  font-size: 1rem;
+}
+
+.options__buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  margin-top: -0.5rem;
+}
+
+.options__button {
+  font-size: 1rem;
+  padding: 0.2rem 0.7rem;
+}
+
+.options__button.active {
+  background: rgb(37, 137, 144);
+  border-color: rgb(37, 137, 144);
+  color: #fff;
+  }
+  
+  .options__button.active:hover {
+  background: rgb(26, 99, 104);
+  color: #fff;
+  }

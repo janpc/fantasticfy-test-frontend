@@ -13,8 +13,8 @@ export default function ProductCard ({ product }) {
       <Image
         src={product.mainImage?.src || notFound}
         alt={product.mainImage?.alt || 'image not found'}
-        width="100"
-        height="100"
+        width={product.mainImage?.width || 1080}
+        height={product.mainImage?.height || 1080}
         className={styles.image}
       />
       <div className={styles.infoContainer}>

@@ -45,12 +45,17 @@ export default function Product({title, body, images, options, variants}) {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <h1 className={styles.title}>{title}</h1>
-        <ImageCarousel images={shownImages} />
-        {body && <div>{parse(body)}</div>}
-        <p>Price: {new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(variant.price)}</p>
-        <OptionSelector options={options} selectOption={setOption} selected={option}/>
-        {variant.weigth && <p>Weigth: {variant.weigth}{variant.weight_unit}</p>}
-        <UnitsLeft variant={variant} />
+        <div className={styles.product_content}>
+          <ImageCarousel images={shownImages} />
+          <div className={styles.product_content__info}>
+            {body && <div>{parse(body)}</div>}
+            <OptionSelector options={options} selectOption={setOption} selected={option}/>
+            {!!variant.weight && <p>Weight: {variant.weight}{variant.weight_unit}</p>}
+            <p>Price: {new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(variant.price)}</p>
+            <UnitsLeft variant={variant} />
+            <button className={styles.product_buy_button}>Buy</button>
+          </div>
+        </div>
       </main>
     </>
   )
