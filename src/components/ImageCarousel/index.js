@@ -28,12 +28,12 @@ export default function ImageCarousel ({ images }) {
       className={styles.image}
     />;
   }
-  if (images.length === 0) {
+  if (images.length === 1) {
     return <Image
-      src={img?.src || notFound}
-      alt={img?.alt || 'image not found'}
-      width={img?.width || 1080}
-      height={img?.height || 1080}
+      src={images[0]?.src || notFound}
+      alt={images[0]?.alt || 'image not found'}
+      width={images[0]?.width || 1080}
+      height={images[0]?.height || 1080}
       className={styles.image}
     />;
   }

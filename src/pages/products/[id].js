@@ -48,7 +48,7 @@ export default function Product({title, body, images, options, variants}) {
         <div className={styles.product_content}>
           <ImageCarousel images={shownImages} />
           <div className={styles.product_content__info}>
-            {body && <div>{parse(body)}</div>}
+            {!!body && <div>{parse(body)}</div>}
             <OptionSelector options={options} selectOption={setOption} selected={option}/>
             {!!variant.weight && <p>Weight: {variant.weight}{variant.weight_unit}</p>}
             <p>Price: {new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(variant.price)}</p>

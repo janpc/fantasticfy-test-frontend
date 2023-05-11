@@ -3,11 +3,23 @@
   padding: 1rem 4rem;
   min-height: 100vh;
   margin: 0 auto;
+
+  @media (max-width: 750px) {
+    padding: 2rem;
+  }
 }
 
 .title {
   Color: white;
   font-size: 100px;
+
+  @media (max-width: 750px) {
+    font-size: 64px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 48px;
+  }
 }
 
 .container {
