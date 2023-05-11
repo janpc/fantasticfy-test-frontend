@@ -8,7 +8,7 @@ import Paginator from '@/components/Paginator'
 const inter = Inter({ subsets: ['latin'] })
 const ipp = 10
 
-export default function Home({products, totalPages, page}) {
+export default function Page({products, totalPages, page}) {
   return (
     <>
       <Head>
